@@ -1,7 +1,7 @@
 var flag = 0;
 var attempts = 0;
-var initial_images = [["images/mi10.png","product-image-mi10"],["images/laptop.png","product-image-laptop"],["images/tv.png","product-image-tv"],["images/miband.png","product-image-band"],["images/trimmer.png","product-image-trimmer"],["images/purifier.png","product-image-purifier"],["images/powerbank.png","product-image-powerbank"],["images/mi8.png","product-image-redmi8"]]
-var results = ["images/fruit.png","images/durga.png","images/durga.png","images/fruit.png","images/fruit.png","images/fruit.png","images/fruit.png","images/fruit.png"]
+var initial_images = [["images/mi10.gif","product-image-mi10"],["images/laptop.gif","product-image-laptop"],["images/tv.gif","product-image-tv"],["images/watch.gif","product-image-band"],["images/trimmer.gif","product-image-trimmer"],["images/purifier.gif","product-image-purifier"],["images/powerbank.gif","product-image-powerbank"],["images/note9.gif","product-image-redmi8"]]
+var results = ["images/sandesh1.gif","images/durga.gif","images/sandesh2.gif","images/noluck.gif","images/durga.gif","images/noluck.gif","images/sandesh1.gif","images/sandesh2.gif"]
 var results_2 = ["images/fruit.png","images/fruit.png"];
 
 shuffle(results);
@@ -31,10 +31,24 @@ function init_load(){
     
 }
 
+function result_text(){
+    var game_flag = localStorage.getItem("flag");
+    var result = localStorage.getItem("result");
+    if(game_flag == "2"){
+        if(result == "lost"){
+            document.getElementById("landing-text-header").innerText="Sorry! You have lost this time! Better luck next time!"
+            document.getElementById("winning-text").innerText="";
+            document.getElementById("container").hidden = true;
+        }
+    }
+    document.getElementById("share").hidden = true;
+    document.getElementById("canvas").hidden = true;
+}
+
 function onProductClick(index, id){
     attempts+=1;
     var imageHolder = document.getElementById(id);
-    if(results[index]=="images/durga.png" && attempts<=2){//&& attempts<=2
+    if(results[index]=="images/durga.gif" && attempts<=2){//&& attempts<=2
         console.log("won")
         flag = 1;    
        // imageHolder.onload = setTimeout(checkResult,500);   
@@ -51,7 +65,7 @@ function checkResult(){
 }
 
 function checkStatus(){
-    if(attempts<=2 ){
+    if(attempts<2 ){
         if(flag ==1){
             alert("Congratulations! You win 10% discount!!\n Click OK to redeem it!")
             flag = 2;
