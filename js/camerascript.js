@@ -223,7 +223,7 @@ document.getElementById('sharefb').addEventListener('click', function() {
              'og:description': "description",
              'og:image:width': '640',
              'og:image:height': '480',
-             'og:image': user_pic.src
+             'og:image': 'https://condescending-snyder-4803d3.netlify.app/images/durga.gif'
           }
       })
   });
