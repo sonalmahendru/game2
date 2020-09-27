@@ -218,7 +218,7 @@ document.getElementById('sharefb').addEventListener('click', function() {
       action_type: 'og.shares',
       action_properties: JSON.stringify({
           object : {
-             'og:url': "https://sonalmahendru.github.io",
+             'og:url': "https://sonalmahendru.github.io/game2",
              'og:title': "test",
              'og:description': "description",
              'og:image:width': '640',
