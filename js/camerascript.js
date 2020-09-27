@@ -180,7 +180,7 @@ if (navigator.mediaDevices.getUserMedia) {
 
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
-var user_pic;
+var user_pic = new Image();
 var snap_button= document.getElementById("snap");
 var share_div = document.getElementById("share");
 
@@ -188,7 +188,7 @@ var share_div = document.getElementById("share");
 snap_button.addEventListener("click", function() {
     console.log("snapped")
   context.drawImage(videoElement, 0, 0);
-  user_pic = convertCanvasToImage(canvas);
+  user_pic.src = convertCanvasToImage(canvas);
   snap_button.hidden = true;
   share_div.hidden = false;
   videoElement.hidden = true;
@@ -211,6 +211,23 @@ function retake(){
   videoElement.hidden = false;
   canvas.hidden = true;
 }
+
+document.getElementById('sharefb').addEventListener('click', function() {
+  FB.ui({
+      method: 'share_open_graph',
+      action_type: 'og.shares',
+      action_properties: JSON.stringify({
+          object : {
+             'og:url': "https://sonalmahendru.github.io",
+             'og:title': "test",
+             'og:description': "description",
+             'og:image:width': '640',
+             'og:image:height': '480',
+             'og:image': user_pic.src
+          }
+      })
+  });
+});
 /*
 document.getElementById('sharefb').addEventListener("click",(function (e) {
   e.preventDefault();
