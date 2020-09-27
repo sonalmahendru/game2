@@ -221,9 +221,9 @@ document.getElementById('sharefb').addEventListener('click', function() {
              'og:url': "https://condescending-snyder-4803d3.netlify.app",
              'og:title': "test",
              'og:description': "description",
-             'og:image:width': '640',
-             'og:image:height': '480',
-             'og:image': 'https://condescending-snyder-4803d3.netlify.app/images/fruit.png'
+             'og:image:width': '702',
+             'og:image:height': '746',
+             'og:image': 'https://condescending-snyder-4803d3.netlify.app/images/happy.jpg'
           }
       })
   });
