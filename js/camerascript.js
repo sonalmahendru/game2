@@ -223,7 +223,7 @@ document.getElementById('sharefb').addEventListener('click', function() {
              'og:description': "description",
              'og:image:width': '640',
              'og:image:height': '480',
-             'og:image': 'https://commons.wikimedia.org/wiki/File:Tree_example_VIS.jpg'
+             'og:image': 'https://sonalmahendru.github.io/game2/images/fruit.png'
           }
       })
   });
