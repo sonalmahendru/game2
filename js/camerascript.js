@@ -218,12 +218,12 @@ document.getElementById('sharefb').addEventListener('click', function() {
       action_type: 'og.shares',
       action_properties: JSON.stringify({
           object : {
-             'og:url': "https://sonalmahendru.github.io/game2",
+             'og:url': "https://condescending-snyder-4803d3.netlify.app",
              'og:title': "test",
              'og:description': "description",
              'og:image:width': '640',
              'og:image:height': '480',
-             'og:image': 'https://sonalmahendru.github.io/game2/images/fruit.png'
+             'og:image': 'https://condescending-snyder-4803d3.netlify.app/images/fruit.png'
           }
       })
   });
